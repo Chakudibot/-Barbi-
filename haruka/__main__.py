@@ -135,15 +135,14 @@ def send_start(bot, update):
         pass
 
     #chat = update.effective_chat  # type: Optional[Chat] and unused variable
-    text = "હેલ્લો બોસ હું છું 😎 ચકુડી 😎 હું ગ્રૂપ મેનેજમેન્ટ માટેની બોટ છું!\n\
-ગ્રૂપ ને સાચવીશ તો અહીંયા નીચે મુજબ માહિતી જોઈ અને એ મુજબ અનુસરો અને ગ્રૂપ માં એડમીન બનાવો.\n\n"
+    text = "હેલ્લો બોસ હું છું 😎 ચકુડી 😎 હું ગ્રૂપ મેનેજમેન્ટ માટેની બોટ છું!ગ્રૂપ ને સાચવીશ તો અહીંયા નીચે મુજબ માહિતી જોઈ અને એ મુજબ અનુસરો અને ગ્રૂપ માં એડમીન બનાવો.\n\n"
 
     text += "🔅 અમારી ચેનલ પણ જોઈ લો [અમારી ચેનલ](https://telegra.ph/Our-channel-02-05)\n\n\
 Follow [Chakudi Bot](https://t.me/ChakudiBot) \n\n\
 તમારા ગ્રૂપ મા એડ કરવી છે મને? [અહિયાં ક્લિક કરો!](t.me/ChakudiBot?startgroup=true)"
 
 
-    keyboard = [[InlineKeyboardButton(text="📢 Support", url="https://t.me/BotDevlopers")]]
+    keyboard = [[InlineKeyboardButton(text="📢 Support", url="https://t.me/ChakudiBot")]]
     keyboard += [[InlineKeyboardButton(text="🛠 Control panel", callback_data="cntrl_panel_M")]]
     keyboard += [[InlineKeyboardButton(text="🇺🇸 Language", callback_data="set_lang_"), 
         InlineKeyboardButton(text="❔ Help", callback_data="help_back")]]
@@ -185,7 +184,7 @@ def control_panel(bot, update):
     if M_match:
         text = "*Control panel* 🛠"
 
-        keyboard = [[InlineKeyboardButton(text="👤 My settings", callback_data="cntrl_panel_U(1)")]]
+        keyboard = [[InlineKeyboardButton(text="👤 મારૂ સેટિંગ", callback_data="cntrl_panel_U(1)")]]
 
         #Show connected chat and add chat settings button
         conn = connected(bot, update, chat, user.id, need_admin=False)
@@ -198,16 +197,16 @@ def control_panel(bot, update):
             member = chatG.get_member(user.id)
             if member.status in ('administrator', 'creator'):
                 text += f"\nConnected chat - *{chatG.title}* (you {member.status})"
-                keyboard += [[InlineKeyboardButton(text="👥 Group settings", callback_data="cntrl_panel_G_back")]]
+                keyboard += [[InlineKeyboardButton(text="👥 ગ્રૂપનું સેટિંગ", callback_data="cntrl_panel_G_back")]]
             elif user.id in SUDO_USERS:
                 text += f"\nConnected chat - *{chatG.title}* (you sudo)"
-                keyboard += [[InlineKeyboardButton(text="👥 Group settings (SUDO)", callback_data="cntrl_panel_G_back")]]
+                keyboard += [[InlineKeyboardButton(text="👥 ગ્રુપનું સેટિંગ (SUDO)", callback_data="cntrl_panel_G_back")]]
             else:
                 text += f"\nConnected chat - *{chatG.title}* (you aren't an admin!)"
         else:
             text += "\nNo chat connected!"
 
-        keyboard += [[InlineKeyboardButton(text="⬅️ Back", callback_data="bot_start")]]
+        keyboard += [[InlineKeyboardButton(text="⬅️ પાછળ", callback_data="bot_start")]]
 
         update.effective_message.reply_text(text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode=ParseMode.MARKDOWN)
 
@@ -226,7 +225,7 @@ def control_panel(bot, update):
                 CHAT_SETTINGS[module].__mod_name__) + R[0]
 
             keyboard = R[1]
-            keyboard += [[InlineKeyboardButton(text="⬅️ Back", callback_data="cntrl_panel_U(1)")]]
+            keyboard += [[InlineKeyboardButton(text="⬅️ પાછળ", callback_data="cntrl_panel_U(1)")]]
                 
             query.message.reply_text(text=text, arse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(keyboard))
 
@@ -265,7 +264,7 @@ def control_panel(bot, update):
             text = "*{}* has the following settings for the *{}* module:\n\n".format(
                 escape_markdown(chat.title), CHAT_SETTINGS[module].__mod_name__) + text
 
-            keyboard += [[InlineKeyboardButton(text="Back", callback_data="cntrl_panel_G_back")]]
+            keyboard += [[InlineKeyboardButton(text="પાછળ", callback_data="cntrl_panel_G_back")]]
                 
             query.message.reply_text(text=text, parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(keyboard))
 
