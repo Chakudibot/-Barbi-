@@ -142,9 +142,9 @@ Follow [Chakudi Bot](https://t.me/ChakudiBot) \n\n\
 તમારા ગ્રૂપ મા એડ કરવી છે મને? [અહિયાં ક્લિક કરો!](t.me/ChakudiBot?startgroup=true)"
 
 
-    keyboard = [[InlineKeyboardButton(text="📢 Support", url="https://t.me/ChakudiBot")]]
-    keyboard += [[InlineKeyboardButton(text="🛠 Control panel", callback_data="cntrl_panel_M")]]
-    keyboard += [[InlineKeyboardButton(text="🇺🇸 Language", callback_data="set_lang_"), 
+    keyboard = [[InlineKeyboardButton(text="📢 વધુ માહિતી", url="https://t.me/BotDevlopers")]]
+    keyboard += [[InlineKeyboardButton(text="🛠 કંટ્રોલ પેનલ", callback_data="cntrl_panel_M")]]
+    keyboard += [[InlineKeyboardButton(text="🇺🇸 ભાષા", callback_data="set_lang_"), 
         InlineKeyboardButton(text="❔ Help", callback_data="help_back")]]
 
     update.effective_message.reply_text(text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
