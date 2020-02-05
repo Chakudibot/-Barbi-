@@ -135,12 +135,13 @@ def send_start(bot, update):
         pass
 
     #chat = update.effective_chat  # type: Optional[Chat] and unused variable
-    text = "Hey there! My name is Barbi Bot - I'm here to help you manage your groups!\n\
-Click Help button to find out more about how to use me to my full potential.\n\n"
+    text = "હેલ્લો બોસ હું છું 😎 ચકુડી 😎.
+હું ગ્રૂપ મેનેજમેન્ટ માટેની બોટ છું, ગ્રૂપ ને તો સાચવીશ તો અહીંયા નીચે મુજબ માહિતી જોઈ અને એ મુજબ અનુસરો અને ગ્રૂપ માં એડમીન બનાવો."\n\n"
 
-    text += "Join [Shayri Channel](https://t.me/BotDevlopers) ( @BotDevlopers ) if you need any support or help\n\n\
-Follow [Barbi Bot](https://t.me/MissBarbiBot) ( @MissBarbiBot ) if you want to keep up with the news, updates and bot downtime!\n\n\
-Made with love by @AmTheHero\n\nWant to add me to your group? [Click here!](t.me/missBarbibot?startgroup=true)"
+    text += "🔅 અમારી ચેનલ પણ જોઈ લો [અમારી ચેનલ](https://telegra.ph/Our-channel-02-05)\n\n\
+Follow [Chakudi Bot](https://t.me/ChakudiBot) ( @ChakudiBot )\n\n\
+તમારા ગ્રૂપ મા એડ કરવી છે મને? [અહિયાં ક્લિક કરો](t.me/ChakudiBot?startgroup=true)"\n\n
+😎 તો રાહ શેની જુઓ છો Start કરો  અને /help  લખો."
 
     keyboard = [[InlineKeyboardButton(text="📢 Support", url="https://t.me/BotDevlopers")]]
     keyboard += [[InlineKeyboardButton(text="🛠 Control panel", callback_data="cntrl_panel_M")]]
